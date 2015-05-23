@@ -1,0 +1,154 @@
+// 清空样式
+.reset(){ // kissy reset
+  *{margin:0;padding:0}li{list-style:none}img{border:0}input,select,textarea{outline:0;border:0;background:0}textarea{resize:none}a{text-decoration:none}
+}
+.reset-sina(){
+  html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{margin:0;padding:0}fieldset,img{border:0}img{display:block}address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal}ul,ol{list-style:none}input{padding-top:0;padding-bottom:0;font-family:"SimSun","宋体"}input::-moz-focus-inner{border:0;padding:0}select,input{vertical-align:middle}select,input,textarea{font-size:12px;margin:0}input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none}textarea{resize:none}input,textarea{background:0;border:0}table{border-collapse:collapse}body{color:#333;font:12px/20px "SimSun","宋体","Arial Narrow",HELVETICA;background:#fff}a{color:#666;text-decoration:none}a:visited{color:#666}a:hover,a:active,a:focus{color:#ff8400;text-decoration:underline}
+}
+.reset-nec(){
+  html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0}header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block}table{border-collapse:collapse;border-spacing:0}caption,th{text-align:left;font-weight:normal}html,body,fieldset,img,iframe,abbr{border:0}i,cite,em,var,address,dfn{font-style:normal}[hidefocus],summary{outline:0}li{list-style:none}h1,h2,h3,h4,h5,h6,small{font-size:100%}sup,sub{font-size:83%}pre,code,kbd,samp{font-family:inherit}q:before,q:after{content:none}textarea{overflow:auto;resize:none}label,summary{cursor:default}a,button{cursor:pointer}h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold}del,ins,u,s,a,a:hover{text-decoration:none}body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,"\5b8b\4f53";color:#333;outline:0}body{background:#fff}a,a:hover{color:#333}
+}
+.reset-qq(){
+  body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}body{font:12px "宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%}a{color:#172c45;text-decoration:none}a:hover{color:#cd0200;text-decoration:underline}em{font-style:normal}li{list-style:none}img{border:0;vertical-align:middle}table{border-collapse:collapse;border-spacing:0}p{word-wrap:break-word}
+}
+
+// 全局变量
+@w_1080:1080px;
+@w_996:996px;
+@w_960:960px;
+@h_auto:auto;
+
+// 调试函数
+.dump {
+  background: @facebook;
+  color:@smartisan;
+}
+.debug {
+  * { outline: 2px dotted red; }
+  * * { outline: 2px dotted green; }
+  * * * { outline: 2px dotted orange; }
+  * * * * { outline: 2px dotted blue; }
+  * * * * * { outline: 1px solid red; }
+  * * * * * * { outline: 1px solid green; }
+  * * * * * * * { outline: 1px solid orange; }
+  * * * * * * * * { outline: 1px solid blue; };
+}
+
+// 样式函数
+.box() {
+  border: 5px solid #fff;
+  background-color: @white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  filter: alpha(opacity=90);
+  -moz-opacity: .9;
+  opacity: .9;
+}
+
+/*
+ * buttons
+*/
+.btn() {display: inline-block; padding: .5em 1em; border: 0 none; border: 1px solid rgba(0, 0, 0, .25); border-radius: 0.3em; background-image: none; box-shadow: 0 1px rgba(0, 0, 0, .15), inset 0 1px rgba(255, 255, 255, .15); color: #fff; text-align: center; text-decoration: none; text-shadow: 1px 1px rgba(0, 0, 0, .1); font-size: 100%; font-family: inherit; font-weight: inherit; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; user-select: none; overflow: visible; cursor: pointer; &:hover, &:focus {text-decoration: none; background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)); } &:focus {outline: thin dotted; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; } &:active {box-shadow: 0 1px rgba(0, 0, 0, .2), inset 0 1px rgba(0, 0, 0, .05); outline: none; } }
+
+/*
+ * colors
+*/
+@navy : #001f3f;
+@blue : #0074d9;
+@aqua : #7fdbff;
+@teal : #39cccc;
+@olive : #3d9970;
+@green : #2ecc40;
+@lime : #01ff70;
+@yellow : #ffdc00;
+@orange : #ff851b;
+@red : #ff4136;
+@fuchsia : #f012be;
+@purple : #b10dc9;
+@maroon : #85144b;
+@white : #ffffff;
+@silver : #dddddd;
+@gray : #aaaaaa;
+@black : #111111;
+// 标志色
+@smartisan : #b81f24;
+@facebook : #3a5795;
+@zblog : #3b6ea5;
+@xiaochunjie : #009292;
+// 安全色
+@s0: #000;
+@s3: #333;
+@s2: #222;
+@s6: #666;
+@s9: #999;
+@sc: #ccc;
+
+// 布局
+.auto() { margin-left: auto; margin-right: auto; }
+.cell() { display: table-cell; *display: inline-block; width: 2000px; *width: auto; }
+.clear() {*zoom: 1; &:before, &:after {display: table; content: ""; line-height: 0; } &:after {clear: both; } }
+.lh(@h) {height: @h; line-height: @h; }
+.wh(@wh) {width: @wh; height: @wh; }
+.zi(@index:1){z-index: @index; }
+.m0() {margin: 0;}
+.p0() {padding: 0;}
+
+// 背景
+.bg(@url) {background: url(@url) 0 0 repeat; }
+.bgm(@url,@x:0,@y:0,@repeat:no-repeat) {background: url(@url) @x @y @repeat; }
+.bgi(@url) {background-image: url(@url); }
+.bgp(@x:0,@y:0){background-position: @x @y; }
+
+// 定位
+.rel(@rel:relative){position: @rel; }
+.abs(@abs:absolute){position: @abs; }
+.fix(@fix:fixed){position: @fix; }
+.pos(r) {position: relative; }
+.pos(f) {position: fixed; }
+.pos(a) {position: absolute; }
+
+// 浮动
+.l(@direction:left;){float: @direction; display: inline; }
+.r(@direction:right){float: @direction; display: inline; }
+.cl() {clear: both; }
+
+// display
+.db(){display: block; }
+.di(){display: inline; }
+.dib(){display: inline-block; }
+.dib7(){display: inline-block; *display: inline; *zoom:1; }
+.dt(){display:table; }
+.dn(){display: none; }
+
+// 字体大小
+.fs(@size: 12px){font-size: @size; }
+
+// 字体
+.ff() { font-family: Arial,'Microsoft Yahei',STHeiti,sans-serif;}
+.ffa() { font-family: Arial; }
+.fft() { font-family: Tahoma; }
+.ffv() { font-family: Verdana; }
+.ffs() { font-family: "SimSun","宋体"; }
+.ffm() { font-family: "Microsoft Yahei","微软雅黑"; }
+.ffn() { font-family: "宋体","Arial Narrow",HELVETICA; }
+.fff() { font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', "Hiragino Sans GB", "STXihei", 'Microsoft Yahei', serif; }
+
+.n() { font-weight: normal; font-style: normal; }
+.b(@bold:bold) { font-weight: @bold; }
+.i() { font-style: italic; }
+
+// 对齐
+.tl(){text-align: left; }
+.tc(){text-align: center; }
+.tr(){text-align: right; }
+.tj(){text-align: justify;}
+
+// text-indent
+.ti(){ overflow: hidden; text-indent: -30000px; }
+.ti2(){ text-indent: 2em; }
+
+// 字符超出宽度自动省略号
+.ellipsis-basic(){overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.el(@substract:0) {.ellipsis-basic(); width:100% - @substract; }
+
+.tu(){text-decoration: underline; }
+.tn(){text-decoration: none; }
